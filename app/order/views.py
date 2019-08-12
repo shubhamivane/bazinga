@@ -1,7 +1,7 @@
 from flask import Blueprint, request, render_template,\
                 redirect, url_for
 from app.order.controllers import get_orders, get_order,\
-                update_email_address, update_phone_no
+                update_email_address, update_phone_no, insert_order_to_db
 from app.order.helper import verify_webhook
 import json
 
