@@ -1,0 +1,40 @@
+{% extends "order/base.html" %}
+{% block content %}
+<div class="container" style="margin-top:30px;">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Order Id</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Total Price</th>
+                <th scope="col">Sub Total Price</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <p><i>To edit any order information just click on the order id.</i></p>
+            {% if orders %}
+            {% for order in orders %}
+            <tr>
+                <th scope="row"><a href="{{ url_for('order._order', order_id=order.id) }}">{{ order.id }}</a></th>
+                <td>{{ order.customer_name }}</td>
+                <td>{{ order.total_price }}</td>
+                <td>{{ order.sub_total_price }}</td>
+                {% if order.email %}
+                <td>{{ order.email }}</td>
+                {% else %}
+                <td>-</td>
+                {% endif %}
+                {% if order.phone_no %}
+                <td>{{ order.phone_no }}</td>
+                {% else %}
+                <td>-</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
