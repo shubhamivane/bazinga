@@ -1,5 +1,5 @@
 from flask import Blueprint, request, render_template,\
-                redirect, url_for
+                redirect, url_for, jsonify
 from app.order.controllers import get_orders, get_order,\
                 update_email_address, update_phone_no, insert_order_to_db
 from app.order.helper import verify_webhook
@@ -61,5 +61,6 @@ def webhook():
     if verify_webhook(shopify_payload, shopify_hmac):
         data = json.loads(shopify_payload)
         insert_order_to_db(data)
+        return jsonify({'message': 'webhook received', 'status': 'OK'})
     else:
         abort(401)
