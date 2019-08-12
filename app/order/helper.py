@@ -2,6 +2,8 @@ from datetime import datetime
 import base64
 import hashlib
 import hmac
+from app import app
+
 
 def convert_to_datetime(date):
     """
