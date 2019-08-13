@@ -16,7 +16,7 @@
             <p><i>To edit any order information just click on the order id.</i></p>
             {% if orders %}
             {% for order in orders %}
-            <tr>
+            <tr class="table-success">
                 <th scope="row"><a href="{{ url_for('order._order', order_id=order.id) }}">{{ order.id }}</a></th>
                 <td>{{ order.customer_name }}</td>
                 <td>{{ order.total_price }}</td>
