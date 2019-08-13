@@ -1,6 +1,5 @@
 # Bazinga
-Shopify webhook for order create event when a order is created on the [shop](https://bazingashubhamtest.myshopify.com/) then this system is notified.
-<br />
+Shopify webhook for order create event when a order is created on the [shop](https://bazingashubhamtest.myshopify.com/) then this system is notified.<br />
 ![Image of Home Page](https://github.com/shubhamivane/bazinga/blob/master/screenshots/home.png)
 ![Image of Order Page](https://github.com/shubhamivane/bazinga/blob/master/screenshots/order.png)
 
