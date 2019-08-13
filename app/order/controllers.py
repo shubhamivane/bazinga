@@ -11,6 +11,7 @@ def insert_order_to_db(order_details):
             order_details : dict
     """
     # converting date to python datetime object
+    print("shubham")
     order_created_at = convert_to_datetime(order_details['created_at'])
 
     # if phone is not present set to None
@@ -22,12 +23,13 @@ def insert_order_to_db(order_details):
     default_address = order_details['customer']['default_address']
     formatted_address = format_address(default_address)
     try:
+        print("shubham")
         order = Order(  
             id = order_details['order_number'], 
-            customer_name = order_details['customer']['first_name'] + ' ' + order_details['last_name'], 
+            customer_name = order_details['customer']['first_name'] + ' ' + order_details['customer']['last_name'], 
             currency = order_details['customer']['currency'],
             total_price = order_details['total_price'],
-            sub_total_price = order_details['sub_total_price'],
+            sub_total_price = order_details['subtotal_price'],
             created_at = order_created_at,
             email = email_id, 
             phone_no = phone_num,
@@ -35,7 +37,8 @@ def insert_order_to_db(order_details):
         )
         db.session.add(order)
         db.session.commit()
-    except Exception:
+    except Exception as e:
+        print(e)
         return
 
 def get_orders():
