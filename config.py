@@ -13,3 +13,5 @@ SQLALCHEMY_DATABASE_URI = None
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+else:
+    SQLALCHEMY_DATABASE_URI = 'postgres+psycopg2://lsftwfubnhqqhk:a975fdf2b3aa7e1489b4065565b47e08bd98f4c2c4b384e83e9629bdfb487e24@ec2-54-225-119-13.compute-1.amazonaws.com:5432/db44brfhai45f'
