@@ -71,6 +71,7 @@
         });
         $("#phone-update").click(function(){
             let phone_no = $("#phone_no").val();
+            console.log(phone_no)
             if(valid_phone_no(phone_no)){
                 $.ajax({
                     type: "POST",
