@@ -35,8 +35,8 @@
         }
 
         function valid_phone_no(phone_no){
-            phone_no = phone_no.slice(1, phone_no.length)
-            if(phone_no[0] !== '+' || phone_no.match(/[^0-9]/) !== null || phone_no.length < 7 || phone_no.length > 15){
+            phone = phone_no.slice(1, phone_no.length)
+            if(phone_no[0] !== '+' || phone.match(/[^0-9]/) !== null || phone.length < 7 || phone.length > 15){
                 popup("Phone number length should be between 7 to 15, and it shouldn't contains any characters.");
                 return false;
             }
