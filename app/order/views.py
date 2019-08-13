@@ -32,7 +32,7 @@ def _order(order_id):
 @order.route('/update/phone', methods=['POST'])
 def update_phone():
     order_id = request.args.get('order_id')
-    phone_no = request.args.get('phone_no')
+    phone_no = '+' + request.args.get('phone_no')
     if update_phone_no(order_id, phone_no):
         return 'Successfully updated.'
     else:
