@@ -11,7 +11,7 @@ def insert_order_to_db(order_details):
             order_details : dict
     """
     # converting date to python datetime object
-    print("shubham")
+    # print("shubham")
     order_created_at = convert_to_datetime(order_details['created_at'])
 
     # if phone is not present set to None
@@ -23,7 +23,7 @@ def insert_order_to_db(order_details):
     default_address = order_details['customer']['default_address']
     formatted_address = format_address(default_address)
     try:
-        print("shubham")
+        # print("shubham")
         order = Order(  
             id = order_details['order_number'], 
             customer_name = order_details['customer']['first_name'] + ' ' + order_details['customer']['last_name'], 
